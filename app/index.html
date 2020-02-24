@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./imageAnimations.css"/>
   <!-- <link href="./hamburgers.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
 </head>
 <body>
         <div class="header">
@@ -39,21 +41,56 @@
             <source src="./images/bg_video.mp4" type="video/mp4">
         </video>
 
-        <div id="invisibleBodyContainer">
-            <div id="profileDescription">
-
-            </div>
+        <div class="invisibleBodyContainer">
             <div id="profileImageContainer">
                 <img class="profileImg" src="./images/mona_lisa.jpg"/>
             </div>
-
+            <div id="profileDescription">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et mauris neque. Curabitur fringilla metus vitae urna viverra, quis sollicitudin mauris fringilla. Aliquam at neque laoreet, condimentum nisl sed, mollis mauris. Morbi ac sagittis magna. Vestibulum feugiat arcu eu tortor congue rutrum. Aliquam malesuada eleifend convallis. Aenean congue aliquam faucibus. Cras rutrum scelerisque mauris in feugiat. Phasellus tincidunt interdum vestibulum. Nullam ac erat malesuada, convallis ipsum sed, dapibus tortor. Sed venenatis accumsan magna eget pulvinar.</p>
+                <br/>
+                <p>Pellentesque cursus, leo eget sodales semper, arcu enim efficitur ligula, quis euismod risus odio ac ipsum. Donec at dui ullamcorper, tempus enim vel, imperdiet dolor. Sed eleifend et urna a porttitor. Ut placerat leo metus, id varius neque mollis quis. Morbi ac auctor dui. Phasellus tempor ultricies posuere. Phasellus malesuada lacus est, id facilisis magna maximus vitae. Cras nec feugiat est. Vestibulum ut tincidunt ipsum. Nunc finibus leo sit amet placerat malesuada. Curabitur hendrerit lacus est, congue sollicitudin augue mattis in.</p>
+            </div>
         </div>
 
-        <div id="invisibleBodyContainer">
+        <div class="opaqueBodyContainer">
+        
+            <div class="main-carousel">
+                <div class="carousel-cell">
+                    <img class="carousel-img" src="./images/starry_night.jpg"/>
+                    <div class="carousel-description">
 
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-img" src="./images/weeping_woman.jpg"/>
+                    <div class="carousel-description">
+
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-img" src="./images/hp1_cover.jpg"/>
+                    <div class="carousel-description">
+
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-img" src="./images/raymond_of_poitiers.jpg"/>
+                    <div class="carousel-description">
+
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-img" src="./images/girl_with_a_pear_earring.jpg"/>
+                    <div class="carousel-description">
+
+                    </div>
+                </div>
+              </div>
         </div>
 
+        <div class="invisibleBodyContainer">
 
+        </div>
 
 
 
@@ -61,11 +98,19 @@
     <!-- <script src='./debatinator.js'></script> -->
     <script src='./top-nav.js'></script>
     <script src='./app.js'></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
     <script>
         // if(navigator.serviceWorker) {
         //     navigator.serviceWorker.register('/sw.js')
         // }
+        var elem = document.querySelector('.main-carousel');
+
+        var flkty = new Flickity( elem, {
+        cellAlign: 'left',
+        contain: true
+        });
+
 
     </script>
 </body>
