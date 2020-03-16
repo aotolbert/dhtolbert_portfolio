@@ -103,6 +103,9 @@
     margin-right: auto;
     margin-left: auto;
   }
+  .resumeLink {
+    color: lightskyblue;
+  }
 
   .opaqueBodyContainer {
     contain: content;
