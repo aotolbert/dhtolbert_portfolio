@@ -1,11 +1,18 @@
 
+  html {
+    overscroll-behavior: none;
+
+  }
+  
   html, body {
+    overscroll-behavior: none;
     padding: 0;
     margin: 0;
     background: #FAFAFA;
     font-family: Arial, sans-serif;
     max-width: 100%;
     -ms-overflow-style: none;
+    overflow-x: hidden !important;
   }
 
   .header {
@@ -17,24 +24,67 @@
     color: #FFF;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     position: fixed;
     z-index: 3;
   }
 
 
-  .menu-title {
+  #menu-title {
     outline: none !important;
     /* position: fixed; */
+    background: #333;
+
+    opacity: 1;
     color: #CCC;
-    height: 10vh;
-    font-size: 3rem;
+    height: 9vh;
+    font-size: xx-large;
     width: 100vw;
-    line-height: 10vh;
-    margin-left: auto;
-    margin-right: auto;
-    /* z-index: 1; */
+    line-height: 9vh;
+    flex-grow: 1;
+    z-index: 1;
     text-align: center;
+  }
+
+  #menu-subtitle {
+    outline: none !important;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #CCC;
+    height: 6vh;
+    font-size: medium;
+    width: 100vw;
+    line-height: 6vh;
+    flex-grow: 1;
+    z-index: 0;
+    text-align: center;
+  }
+
+  .hideSubTitle {
+    top: 0;
+    box-shadow: inset 0px 0px 5px 0px #5f5f5f;
+    transition: transform 0.5s;
+    transform: translateY(-8vh);
+  }
+
+  .revealSubTitle {
+    top: 0;
+    transition: transform 1s;
+    box-shadow: inset 0px 0px 5px 0px #5f5f5f;
+    /* transform: translateY(0vh); */
+  }
+
+  .youtubeHeaderLink {
+    color: honeydew;
+  }
+
+  .ytIcon {
+    margin-right: 3vw;
+    width: 8vh;
+    height: 5vh;
   }
 
 
@@ -59,7 +109,7 @@
     box-shadow: inset 0px 0px 20px 0px;
     height: auto;
     width: 100vw;
-    height: 70vh;
+    height: 75vh;
     border: #a1a1a1 solid 1px;
     padding: 5vw;
     color: black;
@@ -70,23 +120,59 @@
 
   .main-carousel {
     width: 90vw;
-    height: 100%;
+    height: 65vh;
+  }
+
+  .carouselHeader {
+    width: 90vw;
+    height: 8vh;
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+    font-weight: bolder;
+    line-height: 5vh;
   }
 
   .carousel-cell {
     width: 90vw;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
+
   }
 
   .carousel-img {
-    width: auto;
-    height: 70vh;
+    width: 65vw;
+    height: auto;
+    max-height: 40vh;
+    min-height: 25vh;
+  }
+
+  .carousel-description {
+    width: 65vw;
+    height: 30vh;
+    background-color: floralwhite;
+  }
+
+  .videoDescriptionTitle {
+    font-size: large;
+    text-align: center;
+    font-weight: bolder;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    height: 4vh;
+  }
+
+  .videoDescriptionText {
+    padding: 2vw;
+    height: 25vh;
+    z-index: 5;
+    font-size: large;
   }
 
   .invisibleBodyContainer {
-    padding-top: 10vh;
+    padding-top: 12vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -95,13 +181,15 @@
     background-color:rgb(0,0,0); /* fallback for IE 8 and below */
     background-color:rgba(0,0,0,0.5);
     border: white solid 5px;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
   }
 
   #profileDescription {
     contain: content;
     overflow: auto;
     margin-top: 25px;
+    margin-bottom: 25px;
     height: auto;
     z-index: 1;
     width: 25vw;
@@ -117,7 +205,7 @@
   }
 
   #profileImageContainer {
-    margin-top: 25px;
+    margin-top: 5vh;
     height: auto;
     z-index: 1;
     width: auto;
@@ -130,6 +218,7 @@
 
   .profileImg {
     width: auto;
+    max-width: 75vw;
     max-height: 80vh;
     border-radius: 3px;
     box-shadow: 3px 3px 8px grey;
@@ -154,43 +243,14 @@
     }
   }
   
-/* iPads (portrait and landscape) ----------- */
+/* iPhones and Mobile Devices (portrait and landscape) ----------- */
 @media only screen and (max-device-width : 500px) {
-  .profileImg {
-    width: auto;
-    max-height: 80vh;
-    max-width: 75vw;
-    max-width: 80;
-    border-radius: 3px;
-    box-shadow: 3px 3px 8px grey;
-    height: auto;
-  }
-
-  .menu-title {
-    font-size: 2.5vh;
-  }
-
-}
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 501px) and (max-device-width : 767px) {
-  .profileImg {
-    width: auto;
-    max-height: 80vh;
-    border-radius: 3px;
-    box-shadow: 3px 3px 8px grey;
-    height: 100%;
-  }
-
-  .menu-title {
-    font-size: 3vh;
-  }
-
   #profileDescription {
     margin-top: 25px;
     height: auto;
     z-index: 1;
     width: 75vw;
+    max-height: none !important;
     border: white solid 5px;
     padding: 30px;
     min-width: 275px;
@@ -201,6 +261,78 @@
     background-color: rgba(0,0,0,1);
   }
 
+  #menu-subtitle {
+    font-size: small;
+  }
+
+
+  .carouselHeader {
+    font-size: large;
+  }
+
+  .videoDescriptionText {
+    font-size: smaller;
+  }
+
+  .profileImg {
+    width: auto;
+    max-height: 80vw;
+    max-width: 75vw;
+    border-radius: 3px;
+    box-shadow: 3px 3px 8px grey;
+    height: auto;
+  }
+
+  #menu-title {
+    font-size: medium;
+  }
+
+  .carousel-description {
+    font-size: small;
+  }
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 501px) and (max-device-width : 767px) {
+  .profileImg {
+    width: auto;
+    max-height: 50vh;
+    max-width: 100%;
+    border-radius: 3px;
+    box-shadow: 3px 3px 8px grey;
+    height: 100%;
+  }
+
+  #menu-title {
+    font-size: large;
+  }
+
+  #profileDescription {
+    margin-top: 25px;
+    height: auto;
+    z-index: 1;
+    width: 75vw;
+    max-height: none !important;
+
+    border: white solid 5px;
+    padding: 30px;
+    min-width: 275px;
+    color: white;
+    background-color: black;
+    font-size: 1.5rem;
+    background-color: 255, 255, 255, 1;
+    background-color: rgba(0,0,0,1);
+  }
+
+  .carouselHeader {
+    font-size: large;
+  }
+
+  .videoDescriptionText {
+    font-size: small;
+  }
+
 
 }
 
@@ -209,6 +341,7 @@
     .profileImg {
       width: auto;
       max-height: 80vh;
+      max-width: 100%;
       border-radius: 3px;
       box-shadow: 3px 3px 8px grey;
       height: 100%;
@@ -219,6 +352,7 @@
       height: auto;
       z-index: 1;
       width: 75vw;
+      max-height: none !important;
       border: white solid 5px;
       padding: 30px;
       min-width: 275px;
@@ -236,6 +370,7 @@
   .profileImg {
     width: auto;
     max-height: 80vh;
+    max-width: 100%;
     border-radius: 3px;
     box-shadow: 3px 3px 8px grey;
     height: 100%;
