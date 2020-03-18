@@ -1,10 +1,8 @@
 
 const toCache = [
-  './index.html',
-  './static/offline.html',
-  './static/styles.css',
-  './static/debatinator.js',
-  './static/side-nav.js',
+  '/index.html',
+  '/offline.html',
+  '/styles.css'
 ];
 
 const version = '2';
@@ -67,8 +65,8 @@ async function streamArticle(event, url) {
   includeUrl.pathname += 'include';
 
   const parts = [
-    caches.match('/static/index.html'),
-    caches.match('/static/styles.css'),
+    caches.match('/app/index.html'),
+    caches.match('/app/styles.css'),
   ];
 
   const identity = new IdentityStream();

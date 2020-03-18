@@ -2,15 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="author" content="Paul Lewis" />
+  <meta name="author" content="Adam Tolbert" />
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <meta name="theme-color" content="#FF00FF">
+  <meta name="description" content="Daniel Tolbert: Audio Visual Engineer, Currently looking for a job, Online Portfolio and Resume, Personal Video Library">
   <title>Daniel Tolbert</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./imageAnimations.css"/>
   <!-- <link href="./hamburgers.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
+  <link rel="shortcut icon" type="image/png" href="./images/film_reel.png"/>
 </head>
 <body>
         <div class="header">
@@ -26,7 +27,7 @@
             </ul> -->
             <a class="youtubeHeaderLink" href="https://www.youtube.com/user/danieltolbert4114">
                 <div id="menu-subtitle">
-                    <img src="./images/youtube_icon.png" class="ytIcon"/>Check out my Youtube Channel!
+                    <img src="./images/youtube_icon.png" class="ytIcon" alt="Youtube Icon"/>Check out my Youtube Channel!
                 </div>
             </a>
         </div>
@@ -50,7 +51,7 @@
 
         <div class="invisibleBodyContainer">
             <div id="profileImageContainer">
-                <img class="profileImg" src="./images/daniel_green_headshot.png"/>
+                <img class="profileImg" src="./images/daniel_green_headshot.png" alt="Daniel Tolbert Profile Photo"/>
             </div>
             <div id="profileDescription">
                 <p>My name is Daniel Tolbert and I recently graduated from Mercer University in Macon, GA with a Degree in Sound Engineering. I am currently looking for a job that will allow me to utilize my skills and passion for the production process. I am currently working part-time at a radio station cutting commercials and maintaining a consistent audio experience for the Athens, GA area.</p>
@@ -70,53 +71,7 @@
                 Portfolio Highlights
             </div>
             <div class="main-carousel">
-                <div class="carousel-cell">
-                    <a href="https://www.youtube.com/watch?v=GyBzNHLGUAY"><img class="carousel-img" src="./images/onscreen_portfolio_thumbnail.png"/></a>
-                    <div class="carousel-description">
-                        <h2 class="videoDescriptionTitle">On-Screen Portfolio</h2>
-                        <div class="videoDescriptionText">
-                            While I was in school, a fellow movie buff and classmate Connor Cable and I produced a file segment for our school new station. I took some of the better segmens and created a compilation to show just how much I love the film industry as a whole, but also some of the production related skills and experience I acquired.
-                        </div>
-
-                    </div>
-                </div>
-                <div class="carousel-cell">
-                    <a href="https://www.youtube.com/watch?v=UGLFvOG4Pjo&t=41s"><img class="carousel-img" src="./images/movies_2019_thumbnail.png"/></a>
-                    <div class="carousel-description">
-                        <h2 class="videoDescriptionTitle">My Top 10 Movies of 2019</h2>
-                        <div class="videoDescriptionText">
-                            This is a comprehensive overview of my Top 10 movies of 2019. 2019 was a crazy year for a lot of reasons but it did bring us some really quality cinema. Covering all genres with a list ranging from Jojo Rabbit to Parasite, Joker to Booksmart, I disect each one and dive into what resonated me as a moviegoer, and what fell short of expectations.
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-cell">
-                    <a href="https://www.youtube.com/watch?v=qKS8PXgz0GA"><img class="carousel-img" src="./images/oscar_opinions_thumbnail.png"/></a>
-                    <div class="carousel-description">
-                        <h2 class="videoDescriptionTitle">Oscars Breakdown 2019</h2>
-                        <div class="videoDescriptionText">
-                            While I was in school, a fellow movie buff and classmate Connor Cable and I produced a file segment for our school new station. I took some of the better segmens and created a compilation to show just how much I love the film industry as a whole, but also some of the production abilities I have.
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-cell">
-                    <a href="https://www.youtube.com/watch?v=zlFZVsex1BA"><img class="carousel-img" src="./images/movie_bracket_thumbnail.png"/></a>
-                    <div class="carousel-description">
-                        <h2 class="videoDescriptionTitle">Disney vs Universal Bracket</h2>
-                        <div class="videoDescriptionText">
-                            As an experiment, I thought I would utilize social media to compare two juggernauts of animated film, Disney and Universal, to see if I could determine which of the two people in my social circle preferred overall. The results may surprise you!
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-cell">
-                    <a href="https://www.youtube.com/watch?v=99xz7cBTPM0"><img class="carousel-img" src="./images/lighting_thimbnail.png"/></a>
-                    <div class="carousel-description">
-                        <h2 class="videoDescriptionTitle">Experiments with Stage Lighting</h2>
-                        <div class="videoDescriptionText">
-                            As a project for a class in college, we were tasked with displaying different stage lighting effects on a maniquin and interpret the affect of each different lighting pattern. 
-                        </div>
-                    </div>
-                </div>
-              </div>
+            </div>
         </div>
 
         <div class="invisibleBodyContainer">
@@ -131,17 +86,113 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
     <script>
-        // if(navigator.serviceWorker) {
-        //     navigator.serviceWorker.register('/sw.js')
+        // if ('serviceWorker' in navigator) {
+        // navigator.serviceWorker.register('./sw.js', {scope: './sw-test/'})
+        // .then((reg) => {
+        //     // registration worked
+        //     console.log('Registration succeeded. Scope is ' + reg.scope);
+        // }).catch((error) => {
+        //     // registration failed
+        //     console.log('Registration failed with ' + error);
+        // });
         // }
         let scrollIndex = 0;
+
+        function getVideoData() {
+            var data = [
+                {
+                    youtubeLink: 'https://www.youtube.com/watch?v=GyBzNHLGUAY',
+                    imageLink: './images/onscreen_portfolio_thumbnail.png',
+                    imageAlt: 'Daniel Tolbert Onscreen Portfolio',
+                    videoTitle: 'On-Screen Portfolio',
+                    videoDescription: 'While I was in school, a fellow movie buff and classmate Connor Cable and I produced a file segment for our school new station. I took some of the better segmens and created a compilation to show just how much I love the film industry as a whole, but also some of the production related skills and experience I acquired.'
+                },
+                {
+                    youtubeLink: 'https://www.youtube.com/watch?v=UGLFvOG4Pjo&t=41s',
+                    imageLink: './images/movies_2019_thumbnail.png',
+                    imageAlt: 'Daniel Tolbert\'s Top Ten Movies of 2019',
+                    videoTitle: 'My Top 10 Movies of 2019',
+                    videoDescription: 'This is a comprehensive overview of my Top 10 movies of 2019. 2019 was a crazy year for a lot of reasons but it did bring us some really quality cinema. Covering all genres with a list ranging from Jojo Rabbit to Parasite, Joker to Booksmart, I disect each one and dive into what resonated me as a moviegoer, and what fell short of expectations.'
+                },
+                {
+                    youtubeLink: 'https://www.youtube.com/watch?v=qKS8PXgz0GA',
+                    imageLink: './images/oscar_opinions_thumbnail.png',
+                    imageAlt: 'Daniel Tolbert Breaks Down the Oscars of 2019',
+                    videoTitle: 'Oscars Breakdown 2019',
+                    videoDescription: 'While I was in school, a fellow movie buff and classmate Connor Cable and I produced a file segment for our school new station. I took some of the better segmens and created a compilation to show just how much I love the film industry as a whole, but also some of the production abilities I have.'
+                },
+                {
+                    youtubeLink: 'https://www.youtube.com/watch?v=zlFZVsex1BA',
+                    imageLink: './images/movie_bracket_thumbnail.png',
+                    imageAlt: 'Daniels Snapchat weighs in on Disney vs Universal',
+                    videoTitle: 'Disney vs Universal Bracket',
+                    videoDescription: 'As an experiment, I thought I would utilize social media to compare two juggernauts of animated film, Disney and Universal, to see if I could determine which of the two people in my social circle preferred overall. The results may surprise you!'
+                },
+                {
+                    youtubeLink: 'https://www.youtube.com/watch?v=99xz7cBTPM0',
+                    imageLink: './images/lighting_thimbnail.png',
+                    imageAlt: 'Daniel Tolberts Experiments with Stage Lighting',
+                    videoTitle: 'Experiments with Stage Lighting',
+                    videoDescription: 'As a project for a class in college, we were tasked with displaying different stage lighting effects on a maniquin and interpret the affect of each different lighting pattern.'
+                }
+            ];
+
+            return data;
+
+        };
+
+        function renderVideoCards() {
+
+            var videos = getVideoData();
+
+
+            videos.forEach(video => {
+                var cellDiv = document.createElement('div');
+                var linkWrapper = document.createElement('a');
+                var imageEl = document.createElement('img');
+                var headerEl = document.createElement('h2');
+                var descriptionDiv = document.createElement('div');
+                var descriptionText = document.createElement('div');
+
+                cellDiv.classList.add('carousel-cell');
+                imageEl.classList.add('carousel-img');
+                descriptionDiv.classList.add('carousel-description');
+                headerEl.classList.add('videoDescriptionTitle');
+                descriptionText.classList.add('videoDescriptionText');
+
+                descriptionText.innerText = video.videoDescription;
+                headerEl.innerText = video.videoTitle;
+                descriptionDiv.appendChild(headerEl);   
+                descriptionDiv.appendChild(descriptionText);
+                
+
+                imageEl.src = video.imageLink;
+                imageEl.alt = video.imageAlt;
+                linkWrapper.href = video.youtubeLink;
+                linkWrapper.alt = video.imageAlt;
+                linkWrapper.appendChild(imageEl);
+
+                cellDiv.appendChild(linkWrapper);
+                cellDiv.appendChild(descriptionDiv);
+                
+                document.querySelector('.main-carousel').appendChild(cellDiv);
+            });
+
+
+        }
+
+        renderVideoCards();
+
+
+        
+
+
 
     
         window.addEventListener('scroll' , () => {
             const scrolled = window.scrollY;
             if((scrolled > scrollIndex) && (scrolled > 0)) {
                 scrollIndex = scrolled;
-                console.log('You are scrolling down!');
                 var el = document.getElementById('menu-subtitle');
                 if(el.classList.contains('revealSubTitle')) {
                     el.classList.remove('revealSubTitle');
@@ -152,7 +203,6 @@
 
             } else if (scrolled < scrollIndex) {
                 scrollIndex = scrolled;
-                console.log('You are scrolling up');
                 var el = document.getElementById('menu-subtitle');
                 if(el.classList.contains('hideSubTitle')) {
                     el.classList.remove('hideSubTitle');
@@ -163,7 +213,7 @@
             } else {
                 console.log('We are in the twilight zome');
             }
-        })
+        });
 
 
         var elem = document.querySelector('.main-carousel');
