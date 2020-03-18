@@ -136,6 +136,10 @@
     line-height: 5vh;
   }
 
+  .flickity-viewport {
+    height: 75vh !important;
+  }
+
   .carousel-cell {
     width: 90vw;
     display: flex;
